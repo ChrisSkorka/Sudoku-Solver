@@ -3,6 +3,7 @@ function main() {
 
     let sudokuUi = new SudokuUi();
     let sudokuBacktracer = null;
+    let sudokuReducer = null;
     let controls = new Controls();
 
     window.sudokuUi = sudokuUi;
@@ -15,6 +16,11 @@ function main() {
                 sudokuBacktracer = new SudokuBacktracer(sudoku);
                 window.sudokuBacktracer = sudokuBacktracer;
                 sudoku = sudokuBacktracer.solve();
+                break;
+            case 'SudokuReducer':
+                sudokuReducer = new SudokuReducer(sudoku);
+                window.sudokuReducer = sudokuReducer;
+                sudoku = sudokuReducer.reduce();
                 break;
 
         }
