@@ -5,6 +5,7 @@ function main() {
     let sudokuBacktracer = null;
     let sudokuOptimizedBacktracer = null;
     let sudokuReducer = null;
+    let sudokuHybrid = null;
     let controls = new Controls();
 
     window.sudokuUi = sudokuUi;
@@ -27,6 +28,11 @@ function main() {
                 sudokuReducer = new SudokuReducer(sudoku);
                 window.sudokuReducer = sudokuReducer;
                 sudoku = sudokuReducer.reduce();
+                break;
+            case 'SudokuHybrid':
+                sudokuHybrid = new SudokuHybrid(sudoku);
+                window.sudokuHybrid = sudokuHybrid;
+                sudoku = sudokuHybrid.solve();
                 break;
 
         }
